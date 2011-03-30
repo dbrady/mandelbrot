@@ -29,7 +29,9 @@ my desktop at work. I had two monitors, so I needed two images,
 ideally rendering adjacent areas of the mandelbrot plane.
 
 == Files
-*genimage.rb* Is the generator. All the parameters are hard-coded,
+=== genimage.rb
+
+Is the generator. All the parameters are hard-coded,
 sorry. There are some trivial image manipulation functions in there,
 mostly to adjust the viewport by scootching around the mandelbrot
 plane looking for interesting sections, and also to colorize the
@@ -40,12 +42,14 @@ it comes to digging around in there to figure out what does what. If
 you document or refactor anything, please send me a pull request and
 I'll merge it in.
 
-*mandelbrot.rb* This is just a scratch file where I experimented with
- the "twitterable" version, trying to reduce the number of characters
- as much as possible.
+=== mandelbrot.rb
+This is just a scratch file where I experimented with
+the "twitterable" version, trying to reduce the number of characters
+as much as possible.
 
-*brahbur.rb* Brahbur's mandelbrot solution, which was the first major
- compression improvement on my original. Probably should just be in my
- mandelbrot.rb file but like I said this whole project was just
- scratch code for fun.
+=== brahbur.rb
+Brahbur's mandelbrot solution, which was the first major
+compression improvement on my original. Probably should just be in my
+mandelbrot.rb file but like I said this whole project was just
+scratch code for fun.
 
