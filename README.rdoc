@@ -18,9 +18,10 @@ Just run
 
 ...I think. I think that will generate both mandel_right.png and
 mandel_left.png, but it might just generate one side, and you have to
-change a hardcode to get it to switch. Update: Nope, it generates the
-left half of the image. Look at lines 29-30, comment out line 30 to
-set half=RIGHT_HALF and generate the other half of the image.
+change a hardcode to get it to switch. Update: Yeah, it only generates
+one half of the image (the left half). Look at lines 29-30, comment
+out line 30 to set half=RIGHT_HALF and generate the other half of the
+image.
 
 == What's this about halves?
 
