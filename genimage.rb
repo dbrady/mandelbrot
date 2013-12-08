@@ -2,15 +2,15 @@
 require 'RMagick'
 
 # TODO:
-# 
+#
 # - Scriptize this. Take cmdline args for resolution, xmin, xmax,
 #   ymin, ymax (optional, calculate from aspect ratio if not present)
-# 
+#
 # - Make a LERP palette. Set anchor colors and build the palette by
 #   lerping between them.
-# 
+#
 # - Map/reduce this.
-# 
+#
 #   - Instead of rendering to an image, render to datafile.
 #
 #   - Read a set of datafiles and render them to image.
@@ -93,7 +93,7 @@ ysize = max_y - min_y
 
 SCALE_X = SIZE_X / xsize
 SCALE_Y = SIZE_Y / ysize
-  
+
 canvas = Magick::Image.new(SIZE_X, SIZE_Y,
               Magick::HatchFill.new('white','lightcyan2'))
 gc = Magick::Draw.new
@@ -137,9 +137,9 @@ palette = (0..MAX_ITERATIONS).map do |i|
             lerp(a[0],a[1].green,b[0],b[1].green,i),
             lerp(a[0],a[1].blue,b[0],b[1].blue,i)
             ).to_s
-  
+
   puts "%3d [%2d,%2d] (%3d-%3d): %s" % [i, j, k, controls[j][0], controls[k][0], c]
-  
+
   c
 end
 
@@ -193,4 +193,3 @@ puts '-' * 80
     fmt % [n, histogram[n], (n+1..MAX_ITERATIONS).map {|k,v| histogram[k]}.sum-max, (0..n-1).map {|k,v| histogram[k]}.sum]
   } * '    '
 end
-
