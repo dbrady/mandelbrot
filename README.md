@@ -1,4 +1,4 @@
-= Mandelbrot
+# Mandelbrot
 
 This code was just scratch lying around, so it's not particularly
 well-documented. Sorry about that. Or well-refactored. Sorry about
@@ -11,11 +11,11 @@ could be accomplished in a few seconds in C, but that wasn't the point
 when I wrote this. The point was to do it in Ruby, and that has been
 achieved. :-)
 
-== Installation
+## Installation
 
 Good luck.
 
-=== Ubuntu 13.10
+### Ubuntu 13.10
 
 I *think* all you really need is imagemagick and libmagickwand-dev,
 but I installed libmagick-dev as well, not sure if it's needed.
@@ -24,7 +24,8 @@ but I installed libmagick-dev as well, not sure if it's needed.
     sudo apt-get install imagemagick libmagickwand-dev
     gem install rmagick
 
-== Running It
+## Running It
+
 Just run
 
   ruby genimage.rb
@@ -43,20 +44,20 @@ image. Conveniently, since I was trying to emit 2 images for 2
 monitors, if you change the half to LEFT_HALF, the image file emitted
 will be named mandel_left.png.
 
-== What's this about halves?
+## What's this about halves?
 
 Oh yeah. So I originally intended this to generate fractal images for
 my desktop at work. I had two monitors, so I needed two images,
 ideally rendering adjacent areas of the mandelbrot plane.
 
-== Making a single 3960x1080 image
+## Making a single 3960x1080 image
 
 Since RMagick requires imagemagick, you'll have the `convert` tool at
 your command-line. You can stitch the two images together with
 
     convert mandel_left.png mandel_right.png +append mandel_big.png
 
-== Fiddling with it
+## Fiddling with it
 
 In the very hacky genimage.rb file, you can manipulate the image
 output by changing the constants at the top of the file. Specifically,
@@ -72,8 +73,9 @@ parts of the image without changing the tiny floats that control
 the fractal-space viewport.
 
 
-== Files
-=== genimage.rb
+## Files
+
+### genimage.rb
 
 Is the generator. All the parameters are hard-coded,
 sorry. There are some trivial image manipulation functions in there,
@@ -86,7 +88,7 @@ it comes to digging around in there to figure out what does what. If
 you document or refactor anything, please send me a pull request and
 I'll merge it in.
 
-=== mandelbrot.rb
+### mandelbrot.rb
 
 This is just a scratch file where I tried to generate an ascii-art mandelbrot
 fractal that would fit in a single tweet. There are several versions
