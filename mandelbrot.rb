@@ -1,6 +1,11 @@
 # This is the highest-contrast, and I think, prettiest, version. It
 # uses .'s and #'s. 136 chars.
-60.times{|a|puts((0..240).map{|b|x=y=i=0;until(x*x+y*y>4||i==99);x,y,i=x*x-y*y+b/120.0-1.5,2*x*y+a/30.0-1,i+1;end;i==99?'#':'.'}*'');}
+# 60.times{|a|puts((0..240).map{|b|x=y=i=0;until(x*x+y*y>4||i==99);x,y,i=x*x-y*y+b/120.0-1.5,2*x*y+a/30.0-1,i+1;end;i==99?'#':'.'}*'');}
+
+# Slightly expanded to handle whatever is going on with your monitor
+require 'io/console'
+height, width = $stdin.winsize.map {|i| i-2}
+height.times{|a|puts((0..width).map{|b|x=y=i=0;until(x*x+y*y>4||i==99);x,y,i=x*x-y*y+b/(width/2.0)-1.5,2*x*y+a/(height/2.0)-1,i+1;end;i==99?'#':'.'}*'');}
 
 
 # Special thanks to @brahbur http://twitter.com/brahbur for this
