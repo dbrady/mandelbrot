@@ -1,6 +1,39 @@
 #!/usr/bin/env ruby
 require 'RMagick'
 
+# R DANGER DANGER DANGER DANGER DANGER DANGER DANGER DANGER DANGER DANG
+# ER DANGER DANGER DANGER DANGER DANGER DANGER DANGER DANGER DANGER DAN
+# GER DANGER DANGER DANGER DANGER DANGER DANGER DANGER DANGER DANGER DA
+# NGER DANGER DANGER DANGER DANGER DANGER DANGER DANGER DANGER DANGER D
+# ANGER DANGER DANGER DANGER DANGER DANGER DANGER DANGER DANGER DANGER
+# DANGER DANGER DANGER DANGER DANGER DANGER DANGER DANGER DANGER DANGER
+#
+# This was last seen working on OSX ruby 2.2 in about 2016. As of November 2018,
+# I am unable to get this program working in under an hour of tinkering. RMagick
+# won't compile against current imagemagick (version 7). It WILL compile against
+# version 6, and there are instructions out on the web showing how to brew
+# install it and force link it and such, but this script hangs forever on the
+# gc.draw(canvas) line. Salvaging this script probably requires dumping RMagick
+# and writing to another image format, but this script was never that fast to
+# begin with (tens of seconds, up to a couple of minutes, to compute a 1920x1080
+# region on a 4-core 3GHz processor) so I'll probably just let this script sink
+# into the mists of time for posterity. Eventually you'll be able to just run
+# this whole thing under an emulated OSX Puma running ruby 1.6 or something.
+#
+# There's an interesting note in my TODO list: "map/reduce this." That's
+# probably where this code will go next: to Elixir, or another language backed
+# by a massively parallel runtime. That would actually be a pretty neat way to
+# do a raytracer, too, but I digress. At any rate, consider this script
+# officially mothballed. Dear Future Me: Good luck, have fun! --Past Me
+# (2018-11-29)
+#
+# DANGER DANGER DANGER DANGER DANGER DANGER DANGER DANGER DANGER DANGER
+# ANGER DANGER DANGER DANGER DANGER DANGER DANGER DANGER DANGER DANGER
+# NGER DANGER DANGER DANGER DANGER DANGER DANGER DANGER DANGER DANGER D
+# GER DANGER DANGER DANGER DANGER DANGER DANGER DANGER DANGER DANGER DA
+# ER DANGER DANGER DANGER DANGER DANGER DANGER DANGER DANGER DANGER DAN
+# R DANGER DANGER DANGER DANGER DANGER DANGER DANGER DANGER DANGER DANG
+#
 # TODO:
 #
 # - Scriptize this. Take cmdline args for resolution, xmin, xmax,
@@ -163,7 +196,7 @@ tick = SIZE_X/2
     gc.point(px,py)
   end
 end
-
+puts "Points plotted. Drawing canvas."
 gc.draw(canvas)
 filename = if half == RIGHT_HALF
              'mandel_right.png'
